@@ -17,12 +17,12 @@ endif()
 add_definitions("-Wno-pragmas -fno-strict-aliasing -Wall -Wl,--no-undefined")
 
 find_package(Boost REQUIRED system filesystem serialization)
-find_package(Eigen3 REQUIRED)
+find_package(Eigen REQUIRED)
 find_package(OpenCV REQUIRED)
 
 include_directories(SYSTEM ${BOOST_INCLUDE_DIRS}
                            ${catkin_INCLUDE_DIRS}
-                           ${EIGEN3_INCLUDE_DIRS}
+                           ${Eigen_INCLUDE_DIRS}
                            ${OpenCV_INCLUDE_DIRS}
 )
 

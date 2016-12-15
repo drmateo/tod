@@ -36,12 +36,11 @@
 #ifndef ADJACENCY_RANSAC_H_
 #define ADJACENCY_RANSAC_H_
 
+#include "maximum_clique.h"
+#include <opencv2/core/core.hpp>
+#include <opencv2/features2d/features2d.hpp>
 #include <map>
 #include <vector>
-
-#include <opencv2/core/core.hpp>
-
-#include "maximum_clique.h"
 
 namespace tod
 {

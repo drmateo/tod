@@ -33,11 +33,8 @@
  *
  */
 
-#include <limits.h>
-#include <vector>
-
+#include "training.h"
 #include <boost/foreach.hpp>
-
 #include <opencv2/imgproc/imgproc.hpp>
 #if CV_VERSION_MAJOR == 3
 #include <opencv2/rgbd.hpp>
@@ -47,8 +44,8 @@ using namespace cv::rgbd;
 #else
 #include <opencv2/rgbd/rgbd.hpp>
 #endif
-
-#include "training.h"
+#include <limits.h>
+#include <vector>
 
 inline unsigned int roundWithinBounds(float xy, int xy_min, int xy_max) {
   return std::min(std::max(cvRound(xy), xy_min), xy_max);

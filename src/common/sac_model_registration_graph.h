@@ -36,10 +36,9 @@
 #ifndef SAC_MODEL_REGISTRATION_GRAPH_H_
 #define SAC_MODEL_REGISTRATION_GRAPH_H_
 
-#include <opencv2/core/core.hpp>
-
 #include "maximum_clique.h"
-
+#include <opencv2/core/core.hpp>
+#include <boost/shared_ptr.hpp>
 #include <map>
 
 namespace

@@ -33,10 +33,12 @@
  *
  */
 
-#include <string>
-#include <vector>
+#include "training.h"
 
-#include <boost/foreach.hpp>
+#include <object_recognition_core/common/types_eigen.h>
+#include <object_recognition_core/db/db.h>
+#include <object_recognition_core/db/prototypes/observations.hpp>
+#include <object_recognition_core/db/view.h>
 
 #include <ecto/ecto.hpp>
 
@@ -53,12 +55,10 @@ using cv::depthTo3dSparse;
 using cv::rescaleDepth;
 #endif
 
-#include <object_recognition_core/common/types_eigen.h>
-#include <object_recognition_core/db/db.h>
-#include <object_recognition_core/db/prototypes/observations.hpp>
-#include <object_recognition_core/db/view.h>
+#include <boost/foreach.hpp>
 
-#include "training.h"
+#include <string>
+#include <vector>
 
 void rescale_depth(const cv::Mat depth_in, const cv::Size & isize,
     cv::Mat &depth_out) {

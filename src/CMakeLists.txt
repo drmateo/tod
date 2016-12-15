@@ -2,7 +2,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/common)
 
 # deal with the detection TOD module
 ectomodule(ecto_detection DESTINATION ${PROJECT_NAME}
-                          INSTALL  
+                          INSTALL
                           detection/DescriptorMatcher.cpp
                           detection/GuessGenerator.cpp
                           detection/ModelReader.cpp
@@ -11,8 +11,8 @@ ectomodule(ecto_detection DESTINATION ${PROJECT_NAME}
                           common/maximum_clique.cpp
 )
 
-link_ecto(ecto_detection ${OpenCV_LIBRARIES}
-                         ${catkin_LIBRARIES} 
+link_ecto(ecto_detection ${catkin_LIBRARIES}
+			 ${OpenCV_LIBRARIES} 
                          ${Boost_LIBRARIES}
 )
 

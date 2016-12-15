@@ -33,15 +33,9 @@
  *
  */
 
-#include <fstream>
-#include <iostream>
-
-#include <boost/filesystem.hpp>
-#include <boost/foreach.hpp>
-#include <boost/shared_ptr.hpp>
-
-#include <ecto/ecto.hpp>
-
+// OpenCV has to be defined before than object_recognition_core/common/pose_result.h
+// if we desearid to use OpenCV Pose Specialization. In other case it has to be add
+// at least Eigen/Core 
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/features2d/features2d.hpp>
@@ -52,10 +46,19 @@
 #include <object_recognition_core/db/db.h>
 #include "adjacency_ransac.h"
 
+#include <ecto/ecto.hpp>
+
+#include <boost/filesystem.hpp>
+#include <boost/foreach.hpp>
+#include <boost/shared_ptr.hpp>
+
 //#define DO_VALGRIND
 #ifdef DO_VALGRIND
 #include <valgrind/callgrind.h>
 #endif
+
+#include <fstream>
+#include <iostream>
 
 using ecto::tendrils;
 using object_recognition_core::db::ObjectId;
@@ -180,7 +183,7 @@ namespace tod
             std::vector<unsigned int> query_indices = adjacency_ransac.query_indices();
             std::sort(query_indices.begin(), query_indices.end());
             std::vector<unsigned int>::iterator end = std::unique(query_indices.begin(), query_indices.end());
-            query_indices.resize(end - query_indices.begin());
+            query_indices.resize((unsigned long int)(end - query_indices.begin()));
 
             std::cout << query_indices.size() << " keypoints in " << adjacency_ransac.query_indices().size()
                       << " matches" << std::endl;

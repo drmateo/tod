@@ -1,9 +1,12 @@
 cmake_minimum_required(VERSION 2.8)
 project(object_recognition_tod)
 
-find_package(catkin REQUIRED cmake_modules ecto ecto_opencv object_recognition_core opencv_candidate)
+find_package(catkin COMPONENTS cmake_modules ecto ecto_opencv object_recognition_core opencv_candidate REQUIRED)
 
-catkin_package()
+catkin_package(
+DEPENDS object_recognition_core_common
+CATKIN_DEPENDS object_recognition_core
+)
 
 #install targets for all things python
 catkin_python_setup()
@@ -14,9 +17,13 @@ if(NOT CMAKE_BUILD_TYPE)
       FORCE)
 endif()
 
-add_definitions("-Wno-pragmas -fno-strict-aliasing -Wall -Wl,--no-undefined")
+if (APPLE)
+  add_definitions("-Wno-pragmas -fno-strict-aliasing -Wall")
+else ()
+  add_definitions("-Wno-pragmas -fno-strict-aliasing -Wall -Wl,--no-undefined")
+endif()
 
-find_package(Boost REQUIRED system filesystem serialization)
+find_package(Boost COMPONENTS system filesystem serialization python REQUIRED)
 find_package(Eigen REQUIRED)
 find_package(OpenCV REQUIRED)
 

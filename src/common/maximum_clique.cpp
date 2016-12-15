@@ -33,14 +33,12 @@
  *
  */
 
-#include<fstream>
-#include <iostream>
-#include <sstream>
-
+#include "maximum_clique.h"
 #include <boost/foreach.hpp>
 #include <boost/unordered_set.hpp>
-
-#include "maximum_clique.h"
+#include <fstream>
+#include <iostream>
+#include <sstream>
 
 namespace tod
 {

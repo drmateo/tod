@@ -24,7 +24,7 @@ else ()
 endif()
 
 find_package(Boost COMPONENTS system filesystem serialization python REQUIRED)
-find_package(Eigen REQUIRED)
+find_package(Eigen3 REQUIRED)
 find_package(OpenCV REQUIRED)
 
 include_directories(SYSTEM ${BOOST_INCLUDE_DIRS}

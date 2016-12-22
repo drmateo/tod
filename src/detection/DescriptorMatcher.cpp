@@ -32,25 +32,23 @@
  *  POSSIBILITY OF SUCH DAMAGE.
  *
  */
-
-#include <object_recognition_core/common/json_spirit/json_spirit.h>
-#include <object_recognition_core/common/types.h>
-#include <object_recognition_core/db/ModelReader.h>
-#include <object_recognition_core/db/opencv.h>
-
 #include <ecto/ecto.hpp>
-
-#include <opencv2/core/core.hpp>
-#include <opencv2/features2d/features2d.hpp>
-#include <opencv2/flann/flann.hpp>
+#include <string>
+#include <map>
+#include <vector>
 
 #include <boost/foreach.hpp>
 #include <boost/python.hpp>
 #include <boost/python/stl_iterator.hpp>
 
-#include <string>
-#include <map>
-#include <vector>
+#include <opencv2/core/core.hpp>
+#include <opencv2/features2d/features2d.hpp>
+#include <opencv2/flann/flann.hpp>
+
+#include <object_recognition_core/common/json_spirit/json_spirit.h>
+#include <object_recognition_core/common/types.h>
+#include <object_recognition_core/db/ModelReader.h>
+#include <object_recognition_core/db/opencv.h>
 
 using object_recognition_core::db::Documents;
 using object_recognition_core::db::ObjectId;

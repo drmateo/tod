@@ -38,11 +38,11 @@
 #ifndef PCL_SAMPLE_CONSENSUS_H_
 #define PCL_SAMPLE_CONSENSUS_H_
 
-
-#include "sac_model_registration_graph.h"
-#include <opencv2/core/core.hpp>
 #include <set>
 
+#include <opencv2/core/core.hpp>
+
+#include "sac_model_registration_graph.h"
 
 namespace pcl
 {

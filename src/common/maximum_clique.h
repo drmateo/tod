@@ -35,12 +35,13 @@
 
 #ifndef MAXIMUM_CLIQUE_H_
 #define MAXIMUM_CLIQUE_H_
-
-#include <opencv2/core/core.hpp>
-#include <boost/foreach.hpp>
-#include <boost/dynamic_bitset.hpp>
 // inspired by KONC, Janez, JANEŽIČ, Dušanka. An improved branch and bound algorithm for the maximum clique problem
 #include <set>
+
+#include <boost/foreach.hpp>
+#include <boost/dynamic_bitset.hpp>
+
+#include <opencv2/core/core.hpp>
 
 namespace tod
 {

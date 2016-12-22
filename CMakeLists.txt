@@ -3,10 +3,8 @@ project(object_recognition_tod)
 
 find_package(catkin COMPONENTS cmake_modules ecto ecto_opencv object_recognition_core opencv_candidate REQUIRED)
 
-catkin_package(
-DEPENDS object_recognition_core_common
-CATKIN_DEPENDS object_recognition_core
-)
+catkin_package(DEPENDS object_recognition_core_common
+               CATKIN_DEPENDS object_recognition_core)
 
 #install targets for all things python
 catkin_python_setup()
@@ -24,12 +22,12 @@ else ()
 endif()
 
 find_package(Boost COMPONENTS system filesystem serialization python REQUIRED)
-find_package(Eigen3 REQUIRED)
+find_package(Eigen REQUIRED)
 find_package(OpenCV REQUIRED)
 
 include_directories(SYSTEM ${BOOST_INCLUDE_DIRS}
                            ${catkin_INCLUDE_DIRS}
-                           ${EIGEN3_INCLUDE_DIRS}
+                           ${EIGEN_INCLUDE_DIRS}
                            ${OpenCV_INCLUDE_DIRS}
 )
 

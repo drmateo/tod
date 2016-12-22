@@ -1,16 +1,16 @@
-#include <object_recognition_core/common/types.h>
-#include <object_recognition_core/db/db.h>
-#include <object_recognition_core/db/opencv.h>
-
-#include <ecto/ecto.hpp>
-
-#include <opencv2/core/core.hpp>
 
 #include <boost/foreach.hpp>
 #include <boost/python.hpp>
 #include <boost/python/stl_iterator.hpp>
-
 #include <string>
+
+#include <opencv2/core/core.hpp>
+
+#include <ecto/ecto.hpp>
+
+#include <object_recognition_core/common/types.h>
+#include <object_recognition_core/db/db.h>
+#include <object_recognition_core/db/opencv.h>
 
 using ecto::tendrils;
 using object_recognition_core::db::CollectionName;
